@@ -1,157 +1,128 @@
-/* Minimal Dark — MAL List Theme */
-/* Built against MAL's original CSS selectors */
-
 @import "https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=Instrument+Sans:wght@400;500&display=swap";
-@import "https://malscraper.azurewebsites.net/covers/all/anime/presets/dataimagelink";
-@import "https://malscraper.azurewebsites.net/covers/all/manga/presets/dataimagelink";
 
-/* ── Base ── */
-html, body {
+/* ── FORCE DARK EVERYWHERE ── */
+html, body, div, td, tr, tbody, table, span, a, p, input, select, textarea {
+  font-family: 'Instrument Sans', sans-serif !important;
+}
+
+body {
   background: #0a0a0a !important;
   color: #c8c8c6 !important;
-  font-family: 'Instrument Sans', sans-serif !important;
-  font-size: 13px !important;
 }
 
-a { color: #c8c8c6 !important; text-decoration: none !important; }
-a:hover { color: #fff !important; text-decoration: none !important; }
-td { line-height: 1.5em; }
-
-/* ── Header ── */
-.header {
-  width: 1060px;
-  height: 56px;
+/* Kill the white page background */
+#contentWrapper, #content, .content-container,
+.list-container, .list-block, .list-unit,
+.list-table, .list-table > tbody {
   background: #0a0a0a !important;
-  border-bottom: 1px solid #1e1e1e;
-  margin: 0 auto;
+  border: none !important;
+  box-shadow: none !important;
 }
+
+/* ── HEADER ── */
+.header {
+  background: #0a0a0a !important;
+  border-bottom: 1px solid #1e1e1e !important;
+  color: #555 !important;
+}
+
+.header a { color: #555 !important; }
+.header a:hover { color: #eee !important; }
 
 .header .header-title {
-  top: 18px;
-  background-image: url("/img/pc/ownlist/logo_mal.png") !important;
-  background-size: auto 28px !important;
-  filter: invert(1) brightness(0.55);
-  width: 200px;
-  height: 28px;
+  filter: invert(1) brightness(0.4) !important;
 }
 
-.header .header-menu {
-  top: 18px;
-  right: 4px;
-}
-
-.header .header-menu .btn-menu {
+.header .header-menu .btn-menu,
+.header .header-menu .header-info {
+  color: #444 !important;
   font-family: 'Syne', sans-serif !important;
   font-size: 11px !important;
   font-weight: 700 !important;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #555 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
 }
-
-.header .header-menu .header-info {
-  font-family: 'Instrument Sans', sans-serif !important;
-  font-size: .85em !important;
-  color: #555 !important;
-  margin-top: 4px;
-}
-
-.header a { color: #888 !important; }
-.header a:hover { color: #eee !important; }
 
 .header .header-menu .list-menu {
-  background-color: #111 !important;
-  border: 1px solid #222 !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,.7) !important;
+  background: #111 !important;
+  border: 1px solid #1e1e1e !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.8) !important;
 }
 
 .header .header-menu .list-menu .icon-menu {
   color: #888 !important;
-  font-family: 'Instrument Sans', sans-serif !important;
   font-size: 13px !important;
-  font-weight: 500 !important;
-  height: 36px;
-  width: 160px;
 }
 
 .header .header-menu .list-menu .icon-menu:hover {
-  background-color: #1a1a1a !important;
+  background: #1a1a1a !important;
 }
 
-.header .header-menu .list-menu .icon-menu svg.icon { fill: #555 !important; }
-.header .header-menu .list-menu .icon-menu:hover svg.icon { fill: #aaa !important; }
-.header .header-menu .list-menu .icon-menu .text { color: #aaa !important; left: 44px; top: 8px; }
+.header .header-menu .list-menu .icon-menu .text {
+  color: #aaa !important;
+}
 
-/* ── Floating side menu ── */
+.header .header-menu .list-menu .icon-menu svg.icon {
+  fill: #444 !important;
+}
+
+/* ── FLOATING SIDE MENU ── */
 .list-menu-float {
   border: 1px solid #1e1e1e !important;
-  background: #0a0a0a;
-  border-radius: 6px;
-  overflow: hidden;
+  border-radius: 6px !important;
+  overflow: hidden !important;
 }
 
 .list-menu-float .icon-menu {
-  background-color: #111 !important;
-  width: 50px;
-  height: 50px;
+  background-color: #0f0f0f !important;
   border-bottom: 1px solid #1a1a1a !important;
 }
 
-.list-menu-float .icon-menu svg.icon { fill: #555 !important; }
-.list-menu-float .icon-menu:hover svg.icon { fill: #eee !important; }
+.list-menu-float .icon-menu svg.icon { fill: #444 !important; }
+.list-menu-float .icon-menu:hover svg.icon { fill: #ddd !important; }
 
 .list-menu-float .icon-menu:not(.profile):hover {
-  background-color: #1e1e1e !important;
-  width: 145px;
+  background-color: #1a1a1a !important;
 }
 
 .list-menu-float .icon-menu .text {
-  font-family: 'Syne', sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: .08em;
-  text-transform: uppercase;
   color: #ccc !important;
+  font-family: 'Syne', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
 }
 
 .list-menu-float .icon-menu.setting:hover .text .link-list-setting,
 .list-menu-float .icon-menu.setting:hover .text .link-style-setting {
-  background-color: #1e1e1e !important;
-  color: #ccc !important;
-  font-family: 'Syne', sans-serif !important;
-  font-size: 11px !important;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-
-.list-menu-float .icon-menu.setting:hover .text .link-style-setting {
+  background: #1a1a1a !important;
+  color: #aaa !important;
   border-top: 1px solid #222 !important;
+  font-family: 'Syne', sans-serif !important;
+  font-size: 10px !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
 }
 
-/* ── Status tab bar ── */
+/* ── STATUS TAB BAR ── */
 .status-menu-container {
-  width: 1058px !important;
-  height: 44px !important;
-  background-color: #0a0a0a !important;
+  background: #0a0a0a !important;
   border-bottom: 1px solid #1e1e1e !important;
-}
-
-.status-menu-container .status-menu {
-  border-spacing: 24px 0 !important;
+  border-top: none !important;
 }
 
 .status-menu-container .status-menu .status-button {
+  color: #333 !important;
   font-family: 'Syne', sans-serif !important;
-  font-size: 11px !important;
+  font-size: 10px !important;
   font-weight: 700 !important;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: #444 !important;
-  padding: 10px 0 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
 }
 
 .status-menu-container .status-menu .status-button.on {
-  color: #f0f0ee !important;
+  color: #e8e8e6 !important;
   font-weight: 700 !important;
 }
 
@@ -160,84 +131,91 @@ td { line-height: 1.5em; }
 }
 
 .status-menu-container .status-menu .status-button:after {
-  background-color: #f0f0ee !important;
+  background-color: #e8e8e6 !important;
   height: 2px !important;
 }
 
-.status-menu-container .status-menu .status-button.on:after,
-.status-menu-container .status-menu .status-button:hover:after {
-  opacity: 1;
-}
-
-/* Search */
 .status-menu-container .search-container #search-button {
-  color: #444 !important;
-  font-size: 1.3em !important;
-  margin-top: 12px;
-}
-
-.status-menu-container .search-container #search-box {
-  margin-top: 11px;
+  color: #333 !important;
 }
 
 .status-menu-container .search-container #search-box input {
-  background: #111;
-  border: 1px solid #222;
-  color: #aaa;
-  font-family: 'Instrument Sans', sans-serif;
-  padding: 3px 8px;
-  border-radius: 3px;
+  background: #111 !important;
+  border: 1px solid #1e1e1e !important;
+  color: #aaa !important;
 }
 
-/* ── Main list container ── */
-.list-container {
-  background-color: #0a0a0a !important;
-  border: none !important;
-  width: 1058px;
-}
-
-/* ── Section title bar ── */
+/* ── SECTION TITLE BAR — the blue "ALL ANIME" bar ── */
 .list-unit .list-status-title {
-  background-color: #0a0a0a !important;
+  background-color: #0f0f0f !important;
   border-bottom: 1px solid #1e1e1e !important;
+  border-top: none !important;
   height: 32px !important;
-  width: 1024px;
 }
 
 .list-unit .list-status-title .text {
+  color: #333 !important;
   font-family: 'Syne', sans-serif !important;
   font-size: 10px !important;
   font-weight: 700 !important;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #444 !important;
+  letter-spacing: .2em !important;
+  text-transform: uppercase !important;
   text-align: left !important;
-  padding-left: 8px !important;
-  height: 32px !important;
+  padding-left: 10px !important;
+  vertical-align: middle !important;
+}
+
+.list-unit .list-status-title .stats {
+  line-height: 32px !important;
 }
 
 .list-unit .list-status-title .stats a {
+  color: #333 !important;
   font-family: 'Syne', sans-serif !important;
   font-size: 10px !important;
   font-weight: 700 !important;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: #333 !important;
-  background: #111;
-  border: 1px solid #1e1e1e;
-  border-radius: 3px;
-  padding: 2px 8px;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+  background: #161616 !important;
+  border: 1px solid #1e1e1e !important;
+  border-radius: 3px !important;
+  padding: 2px 8px !important;
   margin-right: 6px !important;
 }
 
-.list-unit .list-status-title .stats a:hover { color: #aaa !important; border-color: #2a2a2a; }
-
-/* ── Table header ── */
-.list-table {
-  border: none !important;
-  border-collapse: collapse;
+.list-unit .list-status-title .stats a:hover {
+  color: #999 !important;
+  border-color: #2a2a2a !important;
 }
 
+/* ── TABLE HEADER ROW ── */
+.list-table .list-table-header .header-title {
+  background: #111 !important;
+  border-bottom: 1px solid #1e1e1e !important;
+  border-right: none !important;
+  height: 32px !important;
+}
+
+.list-table .list-table-header .header-title .link,
+.list-table .list-table-header .header-title .link.sort {
+  color: #333 !important;
+  font-family: 'Syne', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+}
+
+.list-table .list-table-header .header-title .link.sort:hover {
+  color: #aaa !important;
+  text-decoration: none !important;
+}
+
+.list-table .list-table-header .header-title .sort-icon {
+  color: #2a2a2a !important;
+}
+
+/* ── TABLE ROWS ── */
 .list-table > tbody:nth-of-type(2n+1) {
   background-color: #0d0d0d !important;
 }
@@ -246,125 +224,136 @@ td { line-height: 1.5em; }
   background-color: #0a0a0a !important;
 }
 
-.list-table .list-table-header .header-title {
-  background: #111 !important;
-  border-bottom: 1px solid #1e1e1e !important;
-  height: 32px !important;
+.list-table > tbody:hover {
+  background-color: #121212 !important;
 }
 
-.list-table .list-table-header .header-title .link {
-  font-family: 'Syne', sans-serif !important;
-  font-size: 10px !important;
-  font-weight: 700 !important;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #444 !important;
-}
-
-.list-table .list-table-header .header-title .link.sort:hover { color: #aaa !important; }
-.list-table .list-table-header .header-title .sort-icon { color: #333 !important; }
-
-/* ── Table rows ── */
 .list-table .list-table-data .data {
-  border-bottom: 1px solid #161616 !important;
-  padding: 6px 0 !important;
+  border-bottom: 1px solid #141414 !important;
+  padding: 7px 0 !important;
+  color: #666 !important;
+  font-family: 'Instrument Sans', sans-serif !important;
+  font-size: 12px !important;
 }
 
-/* Status color strip */
+/* ── STATUS COLOR STRIP ── */
+.list-table .list-table-data .data.status {
+  width: 3px !important;
+}
+
 .list-table .list-table-data .data.status.watching,
-.list-table .list-table-data .data.status.reading { background-color: #f0f0ee !important; }
+.list-table .list-table-data .data.status.reading {
+  background-color: #e8e8e6 !important;
+}
 
-.list-table .list-table-data .data.status.completed { background-color: #444 !important; }
-.list-table .list-table-data .data.status.onhold { background-color: #2a2a2a !important; }
-.list-table .list-table-data .data.status.dropped { background-color: #1e1e1e !important; }
+.list-table .list-table-data .data.status.completed {
+  background-color: #3a3a3a !important;
+}
+
+.list-table .list-table-data .data.status.onhold {
+  background-color: #222 !important;
+}
+
+.list-table .list-table-data .data.status.dropped {
+  background-color: #1a1a1a !important;
+}
+
 .list-table .list-table-data .data.status.plantowatch,
-.list-table .list-table-data .data.status.plantoread { background-color: #1a1a1a !important; }
+.list-table .list-table-data .data.status.plantoread {
+  background-color: #161616 !important;
+}
 
-/* Cover thumbnail */
+/* ── COVER THUMBNAIL ── */
 .list-table .list-table-data .data.image .image {
+  border: 1px solid #1e1e1e !important;
+  border-radius: 3px !important;
   width: 42px !important;
   height: 60px !important;
-  border: 1px solid #1e1e1e !important;
-  border-radius: 3px;
-  object-fit: cover;
+  object-fit: cover !important;
 }
 
-/* Title */
-.list-table .list-table-data .data.title { padding-left: 10px !important; }
+/* ── TITLE COLUMN ── */
+.list-table .list-table-data .data.title {
+  padding-left: 10px !important;
+}
 
 .list-table .list-table-data .data.title .link {
+  color: #d0d0ce !important;
   font-family: 'Syne', sans-serif !important;
   font-size: 13px !important;
   font-weight: 500 !important;
-  letter-spacing: .01em;
-  color: #d8d8d6 !important;
+  letter-spacing: .01em !important;
 }
 
-.list-table .list-table-data .data.title .link:hover { color: #fff !important; }
+.list-table .list-table-data .data.title .link:hover {
+  color: #fff !important;
+  text-decoration: none !important;
+}
 
 .list-table .list-table-data .data.title .rewatching,
 .list-table .list-table-data .data.title .rereading,
 .list-table .list-table-data .data.title .content-status {
-  color: #333 !important;
-  font-family: 'Instrument Sans', sans-serif !important;
+  color: #2a2a2a !important;
   font-size: 11px !important;
 }
 
 .list-table .list-table-data .data.title .add-edit-more {
+  color: #2a2a2a !important;
   font-family: 'Instrument Sans', sans-serif !important;
   font-size: 11px !important;
-  color: #333 !important;
 }
 
-.list-table .list-table-data .data.title .add-edit-more:hover { color: #888 !important; }
-
-/* Score */
-.list-table .list-table-data .data.score .link {
-  font-family: 'Syne', sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  color: #888 !important;
+.list-table .list-table-data .data.title .add-edit-more:hover {
+  color: #666 !important;
 }
 
-.list-table .list-table-data .data.score .link:hover { color: #eee !important; }
-
-/* Type, progress, rated etc */
-.list-table .list-table-data .data {
-  font-family: 'Instrument Sans', sans-serif !important;
-  font-size: 12px !important;
+.list-table .list-table-data a:not(.edit-disabled) {
   color: #555 !important;
 }
 
 .list-table .list-table-data a:not(.edit-disabled):hover {
+  color: #eee !important;
   text-decoration: none !important;
+}
+
+.list-table .list-table-data a.edit-disabled {
+  color: #555 !important;
+  cursor: text !important;
+}
+
+/* ── SCORE ── */
+.list-table .list-table-data .data.score .link {
+  color: #777 !important;
+  font-family: 'Syne', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+.list-table .list-table-data .data.score .link:hover {
   color: #eee !important;
 }
 
-.list-table .list-table-data a.edit-disabled { color: #666 !important; cursor: text; }
-
-/* Tags */
+/* ── TAGS / EDIT LINKS ── */
 .list-table .list-table-data .tags .edit {
-  color: #333 !important;
+  color: #2a2a2a !important;
   font-family: 'Syne', sans-serif !important;
   font-size: 10px !important;
   font-weight: 700 !important;
-  letter-spacing: .06em;
-  text-transform: uppercase;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
 }
 
-.list-table .list-table-data .tags .edit:hover { color: #888 !important; }
+.list-table .list-table-data .tags .edit:hover {
+  color: #888 !important;
+}
+
 .list-table .list-table-data .tags textarea {
-  background: #111;
-  border: 1px solid #222;
-  color: #aaa;
-  font-family: 'Instrument Sans', sans-serif;
+  background: #111 !important;
+  border: 1px solid #1e1e1e !important;
+  color: #aaa !important;
 }
 
-/* Notes */
-.list-table .list-table-data .data.title .notes .text,
-.list-table .list-table-data .data.title .notes .edit { color: #333 !important; }
-
-/* More info row */
+/* ── MORE INFO ROW ── */
 .list-table .more-info {
   background: #0d0d0d !important;
   border-bottom: 1px solid #1e1e1e !important;
@@ -372,84 +361,72 @@ td { line-height: 1.5em; }
 
 .list-table .more-info .more-content {
   padding: 12px !important;
-  color: #666 !important;
-  font-family: 'Instrument Sans', sans-serif !important;
+  color: #555 !important;
   font-size: 12px !important;
 }
 
-/* Loading */
-.list-unit .loading-space {
-  color: #333 !important;
-  margin: 12px;
+/* ── STATS BAR ── */
+.list-unit .list-stats {
+  background: #0f0f0f !important;
+  color: #444 !important;
+  border-bottom: 1px solid #1e1e1e !important;
 }
 
-/* ── Footer — hidden ── */
+/* ── FOOTER ── */
 #footer-block, footer { display: none !important; }
 
-/* ── Filter/sort overlay ── */
+/* ── FILTER/SORT OVERLAY ── */
 #advanced-options {
-  background-color: #111 !important;
+  background: #111 !important;
   border: 1px solid #1e1e1e !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,.8) !important;
-  color: #888 !important;
-  font-family: 'Instrument Sans', sans-serif !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,.9) !important;
+  color: #777 !important;
 }
 
 #advanced-options .advanced-options-header {
+  color: #555 !important;
   border-bottom: 1px solid #1e1e1e !important;
   font-family: 'Syne', sans-serif !important;
-  font-size: 12px !important;
+  font-size: 11px !important;
   font-weight: 700 !important;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #888 !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
 }
 
-#advanced-options .advanced-options-header .description { color: #444 !important; }
-
-#advanced-options select {
-  background-color: #0a0a0a !important;
-  border: 1px solid #222 !important;
-  color: #888 !important;
-  font-family: 'Instrument Sans', sans-serif !important;
-  border-radius: 3px;
-}
-
+#advanced-options select,
 #advanced-options input[type=text] {
   background: #0a0a0a !important;
-  border: 1px solid #222 !important;
-  color: #aaa !important;
-  font-family: 'Instrument Sans', sans-serif !important;
-  border-radius: 3px;
+  border: 1px solid #1e1e1e !important;
+  color: #777 !important;
+  border-radius: 3px !important;
 }
 
 #advanced-options .sort-widget .widget-header,
-#advanced-options .filter-widget .widget-header {
+#advanced-options .filter-widget .widget-header,
+#advanced-options .filter-widget .text {
+  color: #444 !important;
   font-family: 'Syne', sans-serif !important;
   font-size: 10px !important;
   font-weight: 700 !important;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: #555 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
 }
 
-#advanced-options .filter-widget .text { color: #666 !important; }
-
 #advanced-options .sort-widget input[type=radio] + label {
-  background-color: #0a0a0a !important;
-  border: 1px solid #222 !important;
-  color: #555 !important;
+  background: #0a0a0a !important;
+  border: 1px solid #1e1e1e !important;
+  color: #444 !important;
   font-family: 'Syne', sans-serif !important;
   font-size: 10px !important;
   font-weight: 700 !important;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  border-radius: 3px;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  border-radius: 3px !important;
 }
 
 #advanced-options .sort-widget input[type=radio]:checked + label {
-  background-color: #1e1e1e !important;
-  border: 1px solid #333 !important;
+  background: #1e1e1e !important;
+  border-color: #2a2a2a !important;
   color: #ddd !important;
 }
 
@@ -459,17 +436,17 @@ td { line-height: 1.5em; }
 
 #advanced-options .btn-apply,
 #advanced-options .btn-clear {
-  background-color: #f0f0ee !important;
+  background: #e8e8e6 !important;
   color: #0a0a0a !important;
   font-family: 'Syne', sans-serif !important;
   font-size: 10px !important;
   font-weight: 700 !important;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  border-radius: 3px;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+  border-radius: 3px !important;
 }
 
 #advanced-options .btn-apply:hover,
 #advanced-options .btn-clear:hover {
-  background-color: #ccc !important;
+  background: #bbb !important;
 }
